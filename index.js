@@ -2,11 +2,14 @@ const express = require("express");
 const logger = require("morgan");
 const app = express();
 
+require("dotenv").config();
+
 require("./services/scheduler");
 const RedisClient = require("./config/connectRedis");
 const ScheduleRoutes = require("./routes/scheduleRoutes");
 
-const PORT = 1400;
+
+const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(logger("dev"));
