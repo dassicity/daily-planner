@@ -2,9 +2,9 @@ const express = require("express");
 const logger = require("morgan");
 const app = express();
 
+require("./services/scheduler");
 const RedisClient = require("./config/connectRedis");
 const ScheduleRoutes = require("./routes/scheduleRoutes");
-// require("./services/scheduler");
 
 const PORT = 1400;
 
