@@ -1,5 +1,6 @@
 const express = require("express");
 const logger = require("morgan");
+const cors = require("cors")
 const app = express();
 
 require("dotenv").config();
@@ -12,6 +13,8 @@ const ScheduleRoutes = require("./routes/scheduleRoutes");
 const PORT = process.env.PORT;
 
 app.use(express.json());
+app.use(express.static("public"));
+app.use(cors());
 app.use(logger("dev"));
 
 app.use("/api/v1/schedule", ScheduleRoutes);
