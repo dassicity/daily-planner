@@ -33,7 +33,7 @@ const sendMessage = async () => {
         if (minutes == 30) {
             const quote = getQuote();
             console.log(quote);
-            web_push.sendNotification(subscription, JSON.stringify({
+            web_push.sendNotification(parsed_subscription, JSON.stringify({
                 title: "Daily Planner",
                 body: quote
             }));
